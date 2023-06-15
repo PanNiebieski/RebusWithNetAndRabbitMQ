@@ -18,6 +18,20 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1TooBig.Client.Sender", "1T
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1TooBig.Server.Reciver", "1TooBig.Server.Reciver\1TooBig.Server.Reciver.csproj", "{0E3BA6B1-6775-420E-A41F-5455C441C4ED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3IntegrationProblem.Server.Reciver.Confirmation", "3IntegrationProblem.Confirmation\3IntegrationProblem.Server.Reciver.Confirmation.csproj", "{535DB5A0-D8FD-4909-AD55-BB9490CD3C86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3IntegrationProblem.0Messages", "3IntegrationProblem.0Messages\3IntegrationProblem.0Messages.csproj", "{3A9257B4-9C29-4C41-A0C6-BC8F9CC100EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3IntegrationProblem.ExternalThirdAPI", "3IntegrationProblem.ThirdAPI\3IntegrationProblem.ExternalThirdAPI.csproj", "{B4A702AD-1ECB-47DB-87EE-1BD57A2C3C65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3IntegrationProblem.Client", "3IntegrationProblem.Client.Server\3IntegrationProblem.Client.csproj", "{CAAA7074-1A1D-4BC2-91FF-214BEAC1DA45}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0Demo", "0Demo", "{35F0BA9E-9768-4083-A5B8-F79D2C64CD5A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1TooBig", "1TooBig", "{7A6CC767-62B8-4987-8A8A-58BBD40ADE73}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3IntegrationProblem", "3IntegrationProblem", "{5BB4DFAE-0213-4EA3-B418-56BAADB71068}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,9 +58,32 @@ Global
 		{0E3BA6B1-6775-420E-A41F-5455C441C4ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E3BA6B1-6775-420E-A41F-5455C441C4ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E3BA6B1-6775-420E-A41F-5455C441C4ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{535DB5A0-D8FD-4909-AD55-BB9490CD3C86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{535DB5A0-D8FD-4909-AD55-BB9490CD3C86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{535DB5A0-D8FD-4909-AD55-BB9490CD3C86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{535DB5A0-D8FD-4909-AD55-BB9490CD3C86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A9257B4-9C29-4C41-A0C6-BC8F9CC100EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A9257B4-9C29-4C41-A0C6-BC8F9CC100EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A9257B4-9C29-4C41-A0C6-BC8F9CC100EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A9257B4-9C29-4C41-A0C6-BC8F9CC100EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4A702AD-1ECB-47DB-87EE-1BD57A2C3C65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4A702AD-1ECB-47DB-87EE-1BD57A2C3C65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4A702AD-1ECB-47DB-87EE-1BD57A2C3C65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4A702AD-1ECB-47DB-87EE-1BD57A2C3C65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAAA7074-1A1D-4BC2-91FF-214BEAC1DA45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAAA7074-1A1D-4BC2-91FF-214BEAC1DA45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAAA7074-1A1D-4BC2-91FF-214BEAC1DA45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAAA7074-1A1D-4BC2-91FF-214BEAC1DA45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1F8F0D5C-0EE5-46FC-B927-5143F3F05137} = {35F0BA9E-9768-4083-A5B8-F79D2C64CD5A}
+		{61DF0A80-19B8-432C-AC4E-83CC6E31D279} = {35F0BA9E-9768-4083-A5B8-F79D2C64CD5A}
+		{05663F50-B85A-48B7-A1C4-0A81DEF3774C} = {7A6CC767-62B8-4987-8A8A-58BBD40ADE73}
+		{8AFB4C77-4049-491E-AD15-FB4873BF8EE5} = {7A6CC767-62B8-4987-8A8A-58BBD40ADE73}
+		{0E3BA6B1-6775-420E-A41F-5455C441C4ED} = {7A6CC767-62B8-4987-8A8A-58BBD40ADE73}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {27553049-5732-432D-85E4-78878CAE1114}

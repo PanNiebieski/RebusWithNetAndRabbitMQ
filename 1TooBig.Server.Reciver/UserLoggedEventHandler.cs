@@ -1,4 +1,5 @@
-﻿using Rebus.Handlers;
+﻿using _1TooBig._0Messages;
+using Rebus.Handlers;
 
 internal class UserLoggedEventHandler : IHandleMessages<UserLoggedEvent>
 {

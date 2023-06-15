@@ -21,5 +21,4 @@ using (var activator = new BuiltinHandlerActivator())
 
     Console.WriteLine("Invoicing is running - press Enter to quite");
     Console.ReadKey();
-
 }
