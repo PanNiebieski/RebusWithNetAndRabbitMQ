@@ -1,11 +1,7 @@
-﻿
-
-using _1TooBig._0Messages;
+﻿using _1TooBig._0Messages;
 using Rebus.Activation;
 using Rebus.Bus;
 using Rebus.Config;
-using Rebus.Persistence.FileSystem;
-using Rebus.Routing.TypeBased;
 
 using (var activator = new BuiltinHandlerActivator())
 {
@@ -58,8 +54,8 @@ async Task SendTradeRecordedEventAsync(IBus bus)
     Console.WriteLine("Please enter new trade details");
     Console.WriteLine(" commodity > ");
     var commodity = Console.ReadLine();
-
     if (string.IsNullOrWhiteSpace(commodity)) return;
+
     int quantity;
     Console.WriteLine(" quantity > ");
     while (!int.TryParse(Console.ReadLine(), out quantity)) ;
@@ -75,7 +71,6 @@ async Task SendDocumentSavedAsync(IBus bus)
     Console.WriteLine("Please enter new document details");
     Console.WriteLine(" document name > ");
     var documentName = Console.ReadLine();
-
     if (string.IsNullOrWhiteSpace(documentName)) return;
 
     var docEvent = new DocumentSavedEvent(Guid.NewGuid(), documentName);
@@ -89,7 +84,6 @@ async Task SendUserLoggedEventAsync(IBus bus)
     Console.WriteLine("Please enter new trade details");
     Console.WriteLine(" Username > ");
     var username = Console.ReadLine();
-
     if (string.IsNullOrWhiteSpace(username)) return;
 
     var userEvent = new UserLoggedEvent(Guid.NewGuid(), username);

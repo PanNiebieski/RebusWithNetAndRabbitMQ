@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\1SystemTooBig.TradingReciver.Messages\1TooBig.0Messages.csproj" />
+    <ProjectReference Include="..\1TooBig.0Messages\1TooBig.0Messages.csproj" />
   </ItemGroup>
 
 </Project>
