@@ -15,11 +15,31 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+int i = 2;
+
 
 app.MapPost("/check", (Request request) =>
 {
-    var response = new Response(true);
-    return response;
+    Random r = new Random();
+    var ra = r.Next(0, 200);
+    i++;
+
+    if (i % 3 == 0)
+    {
+        var response = new Response(true);
+        return response;
+    }
+    else if (i % 2 == 0)
+    {
+        var response = new Response(false);
+        return response;
+    }
+    else
+    {
+        throw new Exception("NOT WORKING MUMUMU");
+    }
+
+
 })
 .WithName("check")
 .WithOpenApi();
