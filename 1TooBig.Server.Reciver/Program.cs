@@ -3,8 +3,10 @@ using Rebus.Config;
 using Rebus.Routing.TypeBased;
 using _1TooBig._0Messages;
 using _1SystemTooBig.TradingReciver;
+using Rebus.Auditing.Sagas;
+using Rebus.Persistence.FileSystem;
 
-Console.WriteLine(AppName.Value);
+Console.WriteLine(AppInfo.Value);
 
 using (var activator = new BuiltinHandlerActivator())
 {

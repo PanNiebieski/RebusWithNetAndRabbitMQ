@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace _1SystemTooBig.TradingReciver;
-public static class AppName
+public static class AppInfo
 {
 
     public static string Value = $@"              ___.                 

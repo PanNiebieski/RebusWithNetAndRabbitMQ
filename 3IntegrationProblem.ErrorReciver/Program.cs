@@ -5,7 +5,7 @@ using Rebus.Activation;
 using Rebus.Config;
 using Rebus.Routing.TypeBased;
 
-Console.WriteLine(AppName.Value);
+Console.WriteLine(AppInfo.Value);
 
 
 using (var activator = new BuiltinHandlerActivator())

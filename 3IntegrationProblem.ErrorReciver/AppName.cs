@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _3IntegrationProblem.ErrorReciver;
 
-    public static class AppName
+    public static class AppInfo
     {
 
         public static string Value = $@"              ___.                 

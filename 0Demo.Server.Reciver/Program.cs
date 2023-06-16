@@ -2,7 +2,7 @@
 using Rebus.Activation;
 using Rebus.Config;
 
-Console.WriteLine(AppName.Value);
+Console.WriteLine(AppInfo.Value);
 
 using (var act = new BuiltinHandlerActivator())
 {

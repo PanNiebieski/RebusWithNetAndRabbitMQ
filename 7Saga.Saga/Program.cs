@@ -11,7 +11,7 @@ using Rebus.Sagas;
 using Serilog;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-Console.WriteLine(AppName.Value);
+Console.WriteLine(AppInfo.Value);
 
 
 

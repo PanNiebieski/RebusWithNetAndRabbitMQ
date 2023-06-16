@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _7Saga.Client;
 
-    public static class AppName
+    public static class AppInfo
     {
 
         public static string Value = $@"              ___.                 

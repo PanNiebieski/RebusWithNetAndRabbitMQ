@@ -1,9 +1,10 @@
-﻿using _1TooBig._0Messages;
+﻿using _1SystemTooBig.Trading;
+using _1TooBig._0Messages;
 using Rebus.Activation;
 using Rebus.Bus;
 using Rebus.Config;
 
-Console.WriteLine(AppName.Value);
+Console.WriteLine(AppInfo.Value);
 
 using (var activator = new BuiltinHandlerActivator())
 {

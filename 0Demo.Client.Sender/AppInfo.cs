@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace _0Demo.Client.Sender;
 
-namespace _0Demo.Server.Reciver;
-
-public static class AppName
+public static class AppInfo
 {
 
     public static string Value = $@"              ___.                 
@@ -19,5 +13,4 @@ _________ .__  .__               __      _________                  .___
 ";
 
 }
-
 

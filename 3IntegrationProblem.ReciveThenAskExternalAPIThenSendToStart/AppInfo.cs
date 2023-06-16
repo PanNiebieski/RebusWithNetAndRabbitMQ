@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace _3IntegrationProblem.Confirmation;
 
-    public static class AppName
+    public static class AppInfo
     {
+       public static string PathToTimeOut = "C:\\Users\\PanNiebieski\\source\\repos\\RebusWithNet\\3IntegrationProblem.ReciveThenAskExternalAPIThenSendToStart\\TimeOut";
+
 
         public static string Value = $@"              ___.                 
    _____          __    _______________  ___  _____         .__ 

@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace _3IntegrationProblem.Client.Server;
 
-    public static class AppName
+public static class AppInfo
 {
 
-    public static string Value = $@"              ___.                 
-@""              ___.                 
+    public static string Value = $@"              
   _________                  ._____________                                  
  /   _____/ ____   ____    __| _/\______   \ ___________  __________   ____  
  \_____  \_/ __ \ /    \  / __ |  |     ___// __ \_  __ \/  ___/  _ \ /    \ 

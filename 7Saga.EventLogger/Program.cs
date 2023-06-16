@@ -4,9 +4,9 @@ using Rebus.Config;
 using Rebus.Handlers;
 using Serilog;
 using _7Saga.Common;
+using _7Saga.EventLogger;
 
-Console.WriteLine(AppName.Value);
-
+Console.WriteLine(AppInfo.Value);
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.ColoredConsole(outputTemplate: "{Timestamp:HH:mm:ss} {Message}{NewLine}{Exception}")

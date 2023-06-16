@@ -1,5 +1,5 @@
 ﻿namespace _3IntegrationProblem.ThirdAPI;
-    public static class AppName
+    public static class AppInfo
 {
 
     public static string Value = $@"              ___.                 

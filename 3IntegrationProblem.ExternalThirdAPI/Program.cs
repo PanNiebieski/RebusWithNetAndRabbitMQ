@@ -1,5 +1,5 @@
 using _3IntegrationProblem.ThirdAPI;
-Console.WriteLine(AppName.Value);
+Console.WriteLine(AppInfo.Value);
 
 var builder = WebApplication.CreateBuilder(args);
 

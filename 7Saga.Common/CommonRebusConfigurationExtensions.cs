@@ -3,6 +3,13 @@ using System.Configuration;
 using Serilog;
 using Rebus.Persistence.FileSystem;
 using Rebus.Sagas;
+using Rebus.Auditing.Sagas;
+using Rebus.Retry.Simple;
+using Rebus.Retry.FailFast;
+using Rebus.Serialization.Json;
+using Rebus.Bus;
+using Rebus.Handlers;
+using Rebus.Messages;
 
 namespace _7Saga.Common
 {
@@ -15,7 +22,8 @@ namespace _7Saga.Common
             var filepath = Config.AppSetting("FilePathForSagaAndTimeOuts");
 
             var filepathSAGAS = Path.Combine(filepath, "FileDatabase_Saga"); 
-            var filepathTimeOuts = Path.Combine(filepath, "FileDatabase_TimeOuts"); 
+            var filepathTimeOuts = Path.Combine(filepath, "FileDatabase_TimeOuts");
+            var filepathSagaAuditing = Path.Combine(filepath, "FileDatabase_SagaAuditing");
 
             configurer
                 .Logging(l => l.Serilog(Log.Logger))
@@ -27,7 +35,7 @@ namespace _7Saga.Common
                     }
                     else
                     {
-                        t.UseRabbitMq(rabbitMQ,Config.AppSetting("QueueName"));
+                        t.UseRabbitMq(rabbitMQ, Config.AppSetting("QueueName"));
                     }
                 })
                 //.Subscriptions(s =>
@@ -56,9 +64,24 @@ namespace _7Saga.Common
                     //// store timeouts in SQL Server to make them persistent and survive restarts
                     //t.StoreInSqlServer(connectionString, tableName);
                     t.UseFileSystem(filepathTimeOuts);
-                });
+                })
+                //.Serialization(s => s.UseNewtonsoftJson(JsonInteroperabilityMode.PureJson))
+                .Options(o => o.EnableSagaAuditing().UseJsonFile(filepathSagaAuditing))
+                .Options(o => o.SimpleRetryStrategy(
+                    errorQueueAddress: "error",
+                    maxDeliveryAttempts: 5,
+                    secondLevelRetriesEnabled: false,
+                    errorDetailsHeaderMaxLength: int.MaxValue,
+                    errorTrackingMaxAgeMinutes: 10)
+                );
+                //.Options(o => o.FailFastOn(when => when.InnerException != null));
 
             return configurer;
         }
     }
 }
+
+
+
+
+

@@ -5,7 +5,7 @@ using Rebus.Routing.TypeBased;
 using _3IntegrationProblem.Client.Server;
 
 Console.Title = "Here we gonna send PhysicalPerson records";
-Console.WriteLine(AppName.Value);
+Console.WriteLine(AppInfo.Value);
 
 
 string queque = "3IntegrationProblem.Server.Reciver.Confirmation";
