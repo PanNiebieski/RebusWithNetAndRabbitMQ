@@ -41,6 +41,8 @@ public class PayoutSaga : Saga<PayoutSagaData>,
 
     public async Task Handle(AmountsCalculated message)
     {
+        if (Data.AmountsCalculated) return;
+
         await StartARaceAgaistTime();
 
         Logger.Information("Setting {FieldName} to true for case {CaseNumber}", "AmountsCalculated", Data.CaseNumber);
@@ -50,6 +52,8 @@ public class PayoutSaga : Saga<PayoutSagaData>,
 
     public async Task Handle(TaxesCalculated message)
     {
+        if (Data.TaxesCalculated) return;
+
         await StartARaceAgaistTime();
 
         Logger.Information("Setting {FieldName} to true for case {CaseNumber}", "TaxesCalculated", Data.CaseNumber);
@@ -59,6 +63,8 @@ public class PayoutSaga : Saga<PayoutSagaData>,
 
     public async Task Handle(PayoutMethodSelected message)
     {
+        if (Data.PayoutMethodSelected) return;
+
         await StartARaceAgaistTime();
 
         Logger.Information("Setting {FieldName} to true for case {CaseNumber}", "PayoutMethodSelected", Data.CaseNumber);
@@ -85,6 +91,7 @@ public class PayoutSaga : Saga<PayoutSagaData>,
     async Task CheckIfAllDone()
     {
         if (!Data.IsDone) return;
+        
 
         Logger.Information("COMPLETED -> Publishing ready event and marking saga for case {CaseNumber} as complete", Data.CaseNumber);
 
@@ -92,4 +99,6 @@ public class PayoutSaga : Saga<PayoutSagaData>,
 
         MarkAsComplete();
     }
+
+
 }
