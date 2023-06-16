@@ -17,7 +17,7 @@ public class PayoutSaga : Saga<PayoutSagaData>,
     IAmInitiatedBy<AmountsCalculated>,
     IAmInitiatedBy<TaxesCalculated>,
     IAmInitiatedBy<PayoutMethodSelected>,
-    IHandleMessages<TimeOut>
+    IHandleMessages<MyTimeOut>
 {
     static readonly ILogger Logger = Log.ForContext<PayoutSaga>();
 
@@ -36,7 +36,7 @@ public class PayoutSaga : Saga<PayoutSagaData>,
         config.Correlate<PayoutMethodSelected>(m => m.CaseNumber, d => d.CaseNumber);
 
         // internal verification message
-        config.Correlate<TimeOut>(m => m.CaseNumber, d => d.CaseNumber);
+        config.Correlate<MyTimeOut>(m => m.CaseNumber, d => d.CaseNumber);
     }
 
     public async Task Handle(AmountsCalculated message)
@@ -72,7 +72,7 @@ public class PayoutSaga : Saga<PayoutSagaData>,
         await CheckIfAllDone();
     }
 
-    public async Task Handle(TimeOut message)
+    public async Task Handle(MyTimeOut message)
     {
         Logger.Warning("TIMEOUT -> The saga for case {CaseNumber} was not completed within {TimeoutSeconds} s timeout", Data.CaseNumber, 20);
         await _bus.Publish(new PayoutNotReady(Data.CaseNumber));
@@ -85,7 +85,7 @@ public class PayoutSaga : Saga<PayoutSagaData>,
 
         Logger.Information("StartARaceAgaistTime -> Ordering wake-up call in {TimeoutSeconds} s for case {CaseNumber}", 20, Data.CaseNumber);
 
-        await _bus.DeferLocal(TimeSpan.FromSeconds(20), new TimeOut(Data.CaseNumber));
+        await _bus.DeferLocal(TimeSpan.FromSeconds(20), new MyTimeOut(Data.CaseNumber));
     }
 
     async Task CheckIfAllDone()

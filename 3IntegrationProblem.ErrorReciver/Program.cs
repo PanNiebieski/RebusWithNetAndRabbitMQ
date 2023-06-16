@@ -5,6 +5,9 @@ using Rebus.Activation;
 using Rebus.Config;
 using Rebus.Routing.TypeBased;
 
+Console.WriteLine(AppName.Value);
+
+
 using (var activator = new BuiltinHandlerActivator())
 {
     Console.Title = "Error Reciver is waiting for errors";

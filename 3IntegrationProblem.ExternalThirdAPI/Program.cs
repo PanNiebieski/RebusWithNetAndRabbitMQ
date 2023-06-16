@@ -1,5 +1,7 @@
-var builder = WebApplication.CreateBuilder(args);
+using _3IntegrationProblem.ThirdAPI;
+Console.WriteLine(AppName.Value);
 
+var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

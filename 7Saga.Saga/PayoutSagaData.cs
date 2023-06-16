@@ -5,6 +5,8 @@ public class PayoutSagaData : SagaData
 {
     public string CaseNumber { get; set; }
 
+    public bool StartProcessOfPayout { get; set; }
+
     public bool AmountsCalculated { get; set; }
     public bool TaxesCalculated { get; set; }
     public bool PayoutMethodSelected { get; set; }

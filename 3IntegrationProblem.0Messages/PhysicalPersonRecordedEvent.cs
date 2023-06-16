@@ -2,7 +2,7 @@
 
 namespace _3IntegrationProblem._0Messages
 {
-    public class PhysicalPersonRecordedEvent
+    public class PhysicalPersonRecordedEvent : IPhysicalPersonEvents
     {
         [JsonConstructor]
         public PhysicalPersonRecordedEvent(Guid id, string firstName, string lastName, string pesel)

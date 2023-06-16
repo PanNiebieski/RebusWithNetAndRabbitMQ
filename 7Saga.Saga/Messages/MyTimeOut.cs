@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace _7Saga.Saga.Messages
 {
-    public class TimeOut
+    public class MyTimeOut
     {
         public string CaseNumber { get; }
 
-        public TimeOut(string caseNumber)
+        public MyTimeOut(string caseNumber)
         {
             CaseNumber = caseNumber;
         }

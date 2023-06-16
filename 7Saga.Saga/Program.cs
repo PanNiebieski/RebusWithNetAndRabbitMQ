@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using _7Saga.Common;
+﻿using _7Saga.Common;
 using _7Saga.Messages;
 using _7Saga.Saga;
 using _7Saga.Saga.Messages;
@@ -13,9 +11,13 @@ using Rebus.Sagas;
 using Serilog;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
+Console.WriteLine(AppName.Value);
+
+
 
 Log.Logger = new LoggerConfiguration()
-    .WriteTo.ColoredConsole(outputTemplate: "{Timestamp:HH:mm:ss} {Message}{NewLine}{Exception}")
+    .WriteTo.ColoredConsole
+    (outputTemplate: "{Timestamp:HH:mm:ss} {Message}{NewLine}{Exception}")
     .CreateLogger();
 
 using (var activator = new BuiltinHandlerActivator())

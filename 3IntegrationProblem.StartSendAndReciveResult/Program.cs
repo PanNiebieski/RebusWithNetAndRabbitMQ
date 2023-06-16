@@ -2,10 +2,13 @@
 using Rebus.Activation;
 using Rebus.Config;
 using Rebus.Routing.TypeBased;
-using System.Text;
-using static System.Net.WebRequestMethods;
+using _3IntegrationProblem.Client.Server;
 
 Console.Title = "Here we gonna send PhysicalPerson records";
+Console.WriteLine(AppName.Value);
+
+
+string queque = "3IntegrationProblem.Server.Reciver.Confirmation";
 
 using (var activator = new BuiltinHandlerActivator())
 {
@@ -16,12 +19,13 @@ using (var activator = new BuiltinHandlerActivator())
 
     var bus = Configure.With(activator)
         .Logging(l => l.ColoredConsole(minLevel: Rebus.Logging.LogLevel.Error))
-        .Transport(t => t.UseRabbitMq("amqp://guest:guest@localhost:5672", "3IntegrationProblem.Server.Reciver.Confirmation"))
+        .Transport(t => t.UseRabbitMq("amqp://guest:guest@localhost:5672",queque))
         .Routing(r => r.TypeBased()
-        .Map<PhysicalPersonRecordedEvent>("3IntegrationProblem.Server.Reciver.Confirmation")
-        .Map<PhysicalPersonCannotCheckEvent>("3IntegrationProblem.Server.Reciver.Confirmation")
-        .Map<PhysicalPersonApprovedEvent>("3IntegrationProblem.Server.Reciver.Confirmation")
-        .Map<PhysicalPersonRejectedEvent>("3IntegrationProblem.Server.Reciver.Confirmation"))
+        .MapAssemblyDerivedFrom<IPhysicalPersonEvents>(queque))
+        //.Map<PhysicalPersonRecordedEvent>(queque)
+        //.Map<PhysicalPersonCannotCheckEvent>(queque)
+        //.Map<PhysicalPersonApprovedEvent>(queque)
+        //.Map<PhysicalPersonRejectedEvent>(queque))
         .Start();
 
     await activator.Bus.Subscribe<PhysicalPersonApprovedEvent>();

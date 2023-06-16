@@ -1,6 +1,11 @@
-﻿using Rebus.Activation;
+﻿using _0Demo.Client.Sender;
+using Rebus.Activation;
 using Rebus.Config;
+using Rebus.Messages;
 using Rebus.Routing.TypeBased;
+
+Console.WriteLine(AppName.Value);
+
 
 using (var activator = new BuiltinHandlerActivator())
 {

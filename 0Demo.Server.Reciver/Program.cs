@@ -1,5 +1,8 @@
-﻿using Rebus.Activation;
+﻿using _0Demo.Server.Reciver;
+using Rebus.Activation;
 using Rebus.Config;
+
+Console.WriteLine(AppName.Value);
 
 using (var act = new BuiltinHandlerActivator())
 {

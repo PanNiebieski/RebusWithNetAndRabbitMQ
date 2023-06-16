@@ -3,12 +3,12 @@ using Rebus.Activation;
 using Rebus.Bus;
 using Rebus.Config;
 
+Console.WriteLine(AppName.Value);
+
 using (var activator = new BuiltinHandlerActivator())
 {
     var bus = Configure.With(activator)
-        //.Subscriptions(s => s.UseJsonFile("C:\\Users\\PanNiebieski\\source\\repos\\RebusWithNet\\1SystemTooBig.Trading"))
         .Transport(t => t.UseRabbitMqAsOneWayClient("amqp://guest:guest@localhost:5672"))
-
         .Start();
 
     await Task.Delay(500);

@@ -1,6 +1,7 @@
-﻿using System.Text.Json.Serialization;
+﻿using _3IntegrationProblem._0Messages;
+using System.Text.Json.Serialization;
 
-public class PhysicalPersonRejectedEvent
+public class PhysicalPersonRejectedEvent : IPhysicalPersonEvents
 {
     public Guid Id { get; set; }
 

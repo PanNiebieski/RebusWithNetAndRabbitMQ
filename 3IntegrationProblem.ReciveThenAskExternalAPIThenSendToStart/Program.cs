@@ -10,7 +10,7 @@ using System.Text.Json;
 using Rebus.Routing.TypeBased;
 
 Console.Title = "This send message to IntegrationProblem.ExternalThirdAPI";
-
+Console.WriteLine(AppName.Value);
 
 using var activator = new BuiltinHandlerActivator();
 using var http = new HttpClient();
@@ -19,7 +19,8 @@ activator.Register((bus, context) => new PhysicalPersonRecordedEventHandler(bus,
 
 Configure.With(activator)
     .Logging(l => l.ColoredConsole(minLevel: LogLevel.Warn))
-    .Transport(t => t.UseRabbitMq("amqp://guest:guest@localhost:5672", "3IntegrationProblem.Server.Reciver.Confirmation"))
+    .Transport(t => t.UseRabbitMq("amqp://guest:guest@localhost:5672", 
+            "3IntegrationProblem.Server.Reciver.Confirmation"))
     .Routing(r => r.TypeBased()
         .Map<PhysicalPersonRecordedEvent>("3IntegrationProblem.Server.Reciver.Confirmation"))
     .Start();
@@ -45,7 +46,8 @@ public class PhysicalPersonRecordedEventHandler : IHandleMessages<PhysicalPerson
 
     public async Task Handle(PhysicalPersonRecordedEvent message)
     {
-        Console.Write($"PhysicalPerson needs confirmation {message.FirstName} {message.LastName} {message.Pesel}");
+        Console.Write(@$"PhysicalPerson needs confirmation
+                    {message.FirstName} {message.LastName} {message.Pesel}");
 
         var request = new RequestToExternalApi(message);
         string jsonString = JsonSerializer.Serialize(request);
@@ -63,7 +65,8 @@ public class PhysicalPersonRecordedEventHandler : IHandleMessages<PhysicalPerson
             {
                 PropertyNameCaseInsensitive = true
             };
-            desResponse = JsonSerializer.Deserialize<ResponseFromExternalApi>(responseContent, options);
+            desResponse = JsonSerializer.Deserialize<ResponseFromExternalApi>
+                                                        (responseContent, options);
         }
         catch (Exception ex)
         {

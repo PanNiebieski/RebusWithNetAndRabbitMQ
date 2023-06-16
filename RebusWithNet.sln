@@ -5,6 +5,7 @@ VisualStudioVersion = 17.7.33808.371
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{364FF087-99F9-46C0-9293-E2DAF6B53DDB}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		VisualStudio.gitignore = VisualStudio.gitignore
 	EndProjectSection
 EndProject
@@ -44,17 +45,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "6TransportMessageForwarding
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4SagaExample.0Messages", "4SagaExample.0Messages\4SagaExample.0Messages.csproj", "{E385506E-6A37-4D8D-86D1-B6D1BE86971C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4SagaExample.Reciver.SubscribeSAction", "4SagaExample.Reciver.SubscribeSAction\4SagaExample.Reciver.SubscribeSAction.csproj", "{66F4F3D5-49EF-4251-A5A7-589FB1625AE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4SagaExample.Reciver.SubscribeSAction", "4SagaExample.Reciver.SubscribeSAction\4SagaExample.Reciver.SubscribeSAction.csproj", "{66F4F3D5-49EF-4251-A5A7-589FB1625AE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7Saga.Common", "7Saga.Common\7Saga.Common.csproj", "{96A7D710-17F8-4444-A7F1-65F5B27CBEA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "7Saga.Common", "7Saga.Common\7Saga.Common.csproj", "{96A7D710-17F8-4444-A7F1-65F5B27CBEA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7Saga.Client", "7Saga.Client\7Saga.Client.csproj", "{7AB835CC-F7B2-4A25-8EBB-E0CA2E13431C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "7Saga.Client", "7Saga.Client\7Saga.Client.csproj", "{7AB835CC-F7B2-4A25-8EBB-E0CA2E13431C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7Saga.Messages", "7Saga.Messages\7Saga.Messages.csproj", "{42FFD825-F50E-45C3-B8A9-4A9DF5142090}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "7Saga.Messages", "7Saga.Messages\7Saga.Messages.csproj", "{42FFD825-F50E-45C3-B8A9-4A9DF5142090}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7Saga.EventLogger", "7Saga.EventLogger\7Saga.EventLogger.csproj", "{958D9AF7-01A7-4F29-8258-9E6133E590BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "7Saga.EventLogger", "7Saga.EventLogger\7Saga.EventLogger.csproj", "{958D9AF7-01A7-4F29-8258-9E6133E590BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7Saga.Saga", "7Saga.Saga\7Saga.Saga.csproj", "{D4B228F0-AD55-4D04-93DE-A6E715B4A683}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "7Saga.Saga", "7Saga.Saga\7Saga.Saga.csproj", "{D4B228F0-AD55-4D04-93DE-A6E715B4A683}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7SagaExample", "7SagaExample", "{4FB5CDD4-A1F2-4446-B46E-2DDC5772FD4A}"
 EndProject

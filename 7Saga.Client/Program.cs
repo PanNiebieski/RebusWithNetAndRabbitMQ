@@ -3,6 +3,9 @@ using _7Saga.Common;
 using _7Saga.Messages;
 using Rebus.Config;
 using Serilog;
+using _7Saga.Client;
+
+Console.WriteLine(AppName.Value);
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Debug()

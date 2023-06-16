@@ -2,6 +2,9 @@
 using Rebus.Config;
 using Rebus.Routing.TypeBased;
 using _1TooBig._0Messages;
+using _1SystemTooBig.TradingReciver;
+
+Console.WriteLine(AppName.Value);
 
 using (var activator = new BuiltinHandlerActivator())
 {
